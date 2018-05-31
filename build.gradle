@@ -1,0 +1,25 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+
+
+group 'com.ning'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile 'com.codeborne:selenide:4.12.0'
+    testCompile 'org.testng:testng:6.14.3'
+}
+
+test {
+    useTestNG()
+
+    options {
+        systemProperties(System.getProperties())
+    }
+}
